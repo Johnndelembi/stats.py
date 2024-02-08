@@ -10,8 +10,6 @@ st.set_page_config(
 
 df = pd.read_csv("stats.csv")
 df = df.rename(columns={'STATISTICAL THEORY AND METHODS': 'STATISTICAL_THEORY_AND_METHODS'})
-reg1='ECONOMICS~MATHEMATICS+STATISTICAL_THEORY_AND_METHODS'
-reg1output=smf.ols(reg1,df).fit()
 
 with st.sidebar.expander("DASHBOARD"):
          st.image("stats.png")
