@@ -102,7 +102,7 @@ with tab3:
      st.markdown("  - Assumptions: It's essential to understand the assumptions underlying each regression model and ensure your data adheres to them for accurate results. ")
      st.markdown("  - Interpretation:  Interpreting the coefficients of the regression model helps you understand the magnitude and direction of the relationship between variables.")
      st.text("Results of OLS regression method from the dataset, determing the relatioship between economics and statistics and mathematics (samples)")
-     st.image("reg1.png")      
+     st.image("reg1.PNG")      
      
     
 
