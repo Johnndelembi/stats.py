@@ -104,7 +104,7 @@ with tab3:
      st.text("Results of OLS regression method from the dataset, determing the relatioship between economics and statistics and mathematics (samples)")
      st.image("reg1.PNG")
      st.markdown(" ### Results")
-     st.image("Picutre1.png")
+     st.image("Picture1.png")
      st.markdown("the results potray a positive relationship for two of the subject and one potrays a negative relationship, but the results are not statistically significant except for one APPLIED STATS in which case potrays has a 0.006 significance level and shows a  positive relationship. a unit change in APPLIED STATISITICS results would affect ECONOMICS results by 1 unit positively. The model is shows positive relationship. the model is relevant to the real life situation")
      
      
