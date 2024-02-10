@@ -101,7 +101,7 @@ with tab3:
      st.markdown("  - Evaluating causal effects: Examining the impact of interventions or policies on specific outcomes.")
      st.markdown("  - Assumptions: It's essential to understand the assumptions underlying each regression model and ensure your data adheres to them for accurate results. ")
      st.markdown("  - Interpretation:  Interpreting the coefficients of the regression model helps you understand the magnitude and direction of the relationship between variables.")
-     st.text("Results of OLS regression method from the dataset, determing the relatioship between economics and statistics and mathematics (samples)")
+     st.caption("Results of OLS regression method from the dataset, determing the relatioship between economics and statistics and mathematics (samples)")
      st.image("reg1.PNG")
      st.markdown(" ### Results")
      st.image("Picture1.png")
