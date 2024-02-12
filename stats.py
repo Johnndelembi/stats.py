@@ -193,15 +193,8 @@ cols3.page_link("https://tome.app/fx-3c4/johns-portfolio-cllaidgc700wkoe5qqmitxx
 cols3.image("profile-pic.png", width=150)
 cols4.page_link("https://williamjohnie61@gmail.com", label="Email")
 cols5.page_link("https://twitter.com/Johnwills171", label='Twitter')
-cols4.write("Prepared by: Ndelembi, John")
-cols4.write("Data analyst / Web Developer")
-cols4.write("For Calls | +255 625 232 734")
-
-
-    
-
-
-
+cols4.write("Ndelembi, John")
+cols4.write("Data Analyst | Web Developer")
 
 
 
