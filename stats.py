@@ -42,7 +42,7 @@ with cols1:
 
    
 with cols2:
-     st.subheader(":green[STATISTICAL ANALYSIS PROJECT]")
+     st.subheader(":green[DATA SCIENCE PROJECT]")
      st.write(" ***Dataset timeline 2021/2022***")
      st.write("***Date | 08/Feb/2024***")
      st.write("[![Follow](https://img.shields.io/twitter/follow/Johnwills171?style=social)](https://www.twitter.com/Johnwills171)")
