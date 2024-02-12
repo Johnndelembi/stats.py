@@ -6,7 +6,7 @@ import time
 #-----PAGE CONFIGURATION-------
 
 st.set_page_config(
-    page_title="STATISTICAL ANALYSIS PROJECT",
+    page_title="DATA PROJECT",
     page_icon=":bar_chart:")
 
 
