@@ -82,7 +82,7 @@ with tab1:
         st.line_chart(df['SEX'])
 
     pages = {
-          "Measures OF Central tendency": describe_page,
+          "Descriptive Analysis": describe_page,
           "sex distribution": sex,
           "Bar chart of dataset": bar_chart,
           "Sex Line chart distribution": sex_line_chart}   
