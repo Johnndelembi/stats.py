@@ -143,10 +143,10 @@ with tab3:
     st.subheader("Results")
     with st.expander("Regression Table Results"):
         st.caption("Summary output determing the relatioship between economics and Applied statistics")
-        st.image("output.png")
+        st.image("output.PNG")
         st.write("---")
         st.write(" ###")
-        st.image("output1.png")  
+        st.image("output1.PNG")  
         st.markdown(" ### Results")
         st.markdown('''
                     Multiple R: 0.738 indicates a moderately strong positive relationship between the independent variable(s) and the dependent variable. This means that around 54.4% (R-squared value) of the variance in the dependent variable can be explained by the independent variable(s).
