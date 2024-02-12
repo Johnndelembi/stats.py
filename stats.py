@@ -189,12 +189,12 @@ st.write("####")
 
  #-------------FOOTER-----------
 cols3, cols4, cols5 = st.columns(3, gap='large')
-cols3.page_link("https://tome.app/fx-3c4/johns-portfolio-cllaidgc700wkoe5qqmitxx1q", label='Portfolio')    
+cols3.page_link("https://tome.app/fx-3c4/johns-portfolio-cllaidgc700wkoe5qqmitxx1q", label='**Portfolio**')    
 cols3.image("profile-pic.png", width=150)
-cols4.page_link("https://williamjohnie61@gmail.com", label="Email")
-cols5.page_link("https://twitter.com/Johnwills171", label='Twitter')
-cols4.write("Ndelembi, John")
-cols4.write("Data Analyst | Web Developer")
+cols4.page_link("https://williamjohnie61@gmail.com", label="**Email**")
+cols5.page_link("https://twitter.com/Johnwills171", label='**Twitter**')
+cols4.write("**Ndelembi, John**")
+cols4.write("**Data Analyst | Web Developer**")
 
 
 
