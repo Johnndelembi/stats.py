@@ -1,29 +1,38 @@
 import numpy as np
+from dotenv import load_dotenv
 import pandas as pd
+import os
+import matplotlib.pyplot as plt
 import streamlit as st
+from streamlit_lottie import st_lottie
+import time
 
 #-----PAGE CONFIGURATION-------
 
 st.set_page_config(
     page_title="STATISTICAL ANALYSIS PROJECT",
-    page_icon=":random:")
+    page_icon=":bar_chart:")
+
 
 df = pd.read_csv("stats.csv")
 df = df.rename(columns={'STATISTICAL THEORY AND METHODS': 'STATISTICAL_THEORY_AND_METHODS'})
 
 with st.sidebar.expander("DASHBOARD"):
-    choice = st.selectbox("", ["About", "Contents"])
+    choice = st.selectbox("", ["ABOUT", "CONTENTS"])
          
-    if choice=='About':
+    if choice=='ABOUT':
         st.image("stats.png")
-        st.markdown(" ## About")
-        st.markdown(" > Analysis of data on performance  of Diploma students for academic years 2021/2022 and 2022/2023")
+        st.markdown(" ## ABOUT")
+        st.markdown(" Analysis of data on performance  of Diploma students for academic years 2021/2022")
+        st.write("---")
         st.markdown(" ## AIM")
-        st.markdown(" > To write a report on the dataset which will summarise the characteristics of the data. including the suitable numerical summary measures to describe the distributions of  data and inferential analysis")
+        st.markdown(" To report on the dataset summarizing the characteristics of the data. including the suitable numerical summary measures to describe the distributions in terms of regression and inferential analysis")
     else:
-        st.markdown("- Description of the data")
+        st.markdown("- Overview")
         st.markdown("- Regression Analysis")
         st.markdown(" - Inferential Analysis")
+        st.write("---")
+        st.markdown(" - Data analysis model")
 
 st.sidebar.write("Copyright 2024")
 st.sidebar.write("[![Follow](https://img.shields.io/twitter/follow/Johnwills171?style=social)](https://www.twitter.com/Johnwills171)")
@@ -37,28 +46,30 @@ with cols1:
 
    
 with cols2:
-     st.subheader("STATISTICAL ANALYSIS PROJECT")
-     st.write(" ***Dataset timeline 2021/2022 & 2022/2023***")
+     st.subheader(":green[STATISTICAL ANALYSIS PROJECT]")
+     st.write(" ***Dataset timeline 2021/2022***")
      st.write("***Date | 08/Feb/2024***")
-
-tab1, tab2 = st.tabs(["2021/2022", "2022/2023"]) 
-
-with tab1:
-     st.title("Descriptive Analysis(IDA/EDA) ")
-     st.caption(" (EDA: Exploratory Data Analysis & IDA: Initial Data Analysis)")     
-     st.markdown("This is diploma results of Statistics students 2021/2022 who sat for variety of test subjects, these are the results. in the following slides i tried going through the neccesary analytical processes. the data set icludes females and males students who participated in different tests. the task is to study the data set and define different patterns existing in the data and derive data driven inference on the data ")   
+     st.write("[![Follow](https://img.shields.io/twitter/follow/Johnwills171?style=social)](https://www.twitter.com/Johnwills171)")
 
 
+tab1, tab2 = st.tabs(["DATASET ANALYSIS", "RUN YOUR OWN ANALYSIS"]) 
 
 #------DATA IMPORTATION AND EXPLORATION------
+
+
+with tab1:
+     st.title(":green[Overview] :sunglasses:")
+     st.caption(" (EDA: Exploratory Data Analysis & IDA: Initial Data Analysis)")     
+     st.markdown("The data shows scores of 21 students (5 females, 16 males) in 5 subjects (Mathematics, Statistical Theory And Methods, Applied Statistics, Economics, Statistical Computing). Females scored higher on average (70.8 vs. 62.7 for males), with scores ranging from 37 (male, Mathematics) to 96 (female, Economics). Positive correlations between subjects suggest students performing well in one tended to do well in others."
+    )
+
 
 with tab1:
     st.markdown(" ### DASHBOARDS: 2021/2022 RESULTS")
     st.dataframe(df)
         
 
-    def describe_page():
-        st.markdown(" click to results")   
+    def describe_page():  
         st.write("Descriptive measures of central tendency and measures of dispersion")
         st.dataframe(df.describe())
 
@@ -66,9 +77,9 @@ with tab1:
         st.markdown("In this dataset there are 16 male and 5 females")          
         st.write(pd.DataFrame(df['SEX']).value_counts())
 
-    def line_chart():
-        st.markdown("Line chart of the data values")
-        st.line_chart(df)    
+    def bar_chart():
+        st.markdown("Bar chart of the data values")
+        st.bar_chart(df)    
 
     def sex_line_chart():
         st.text(" Sex distribution : F = FEMALE. M = MALE")
@@ -77,10 +88,10 @@ with tab1:
     pages = {
           "Measures OF Central tendency": describe_page,
           "sex distribution": sex,
-          "Line chart of dataset": line_chart,
+          "Bar chart of dataset": bar_chart,
           "Sex Line chart distribution": sex_line_chart}   
 
-    choice = st.selectbox("Pick a page", pages.keys())
+    choice = st.selectbox("Nav Bar", pages.keys())
     pages[choice]()    
 
 
@@ -88,22 +99,29 @@ with tab1:
 
     with st.expander("Graphs"):
         df1 = pd.DataFrame(df['APPLIED STATISTICS'].value_counts())
-        st.text(" Applied Frequency V. Applied Statistics")
+        st.text("Frequency V. Applied Statistics")
         st.bar_chart(df1)
+
+        st.write("---")
 
         df2 = pd.DataFrame(df['STATISTICAL_THEORY_AND_METHODS'].value_counts()) 
         st.text("Frequency V.STATISTICAL THEORY AND METHODS ")
         st.bar_chart(df2)
 
+        st.write("---")
+
         df3 = pd.DataFrame(df['ECONOMICS'].value_counts())
         st.text("Frequency V. ECONOMICS")
         st.bar_chart(df3)
+
+        st.write("---")
 
         df4 = pd.DataFrame(df['STATISTICAL COMPUTING'].value_counts())
         st.text(" Frequency V. STATISTICAL COMPUTING ")
         st.bar_chart(df4)
 
              
+               
 
 
     tab3, tab4 = st.tabs(["Regression analysis", "inferential statistics"])
@@ -128,18 +146,49 @@ with tab3:
     
     st.subheader("Results")
     with st.expander("Regression Table Results"):
-        st.caption("Results of OLS regression method from the dataset, determing the relatioship between economics and statistics and mathematics (samples)")
-        st.image("reg1.PNG")  
+        st.caption("Summary output determing the relatioship between economics and Applied statistics")
+        st.image("output.png")
+        st.write("---")
+        st.write(" ###")
+        st.image("output1.png")  
         st.markdown(" ### Results")
-        st.markdown("the results potray a positive relationship for two of the subject and one potrays a negative relationship, but the results are not statistically significant except for one APPLIED STATS in which case potrays has a 0.006 significance level and shows a  positive relationship. a unit change in APPLIED STATISITICS results would affect ECONOMICS results by 1 unit positively. The model is shows positive relationship. the model is relevant to the real life situation")
+        st.markdown('''
+                    Multiple R: 0.738 indicates a moderately strong positive relationship between the independent variable(s) and the dependent variable. This means that around 54.4% (R-squared value) of the variance in the dependent variable can be explained by the independent variable(s).
+Adjusted R-squared: 0.520 is slightly lower than R-squared, suggesting that the model fit improves slightly when considering the number of predictors in the model.
+F-statistic: 22.66 and a p-value of 0.000136 indicate that the model is statistically significant, meaning there is a statistically significant relationship between the independent variable(s) and the dependent variable.
+Individual Coefficients:
 
-     
+Intercept: The intercept of -19.36 suggests that even when the independent variable (Applied Statistics) is zero, the predicted value of the dependent variable is -19.36. However, the p-value of 0.269 indicates that this intercept is not statistically significant.
+Applied Statistics: The coefficient of 1.204 for Applied Statistics means that for every one-unit increase in Applied Statistics score, the predicted value of the dependent variable increases by 1.204 units, on average. The p-value of 0.000136 indicates that this coefficient is statistically significant, meaning that Applied Statistics has a significant positive impact on the dependent variable.''')
+
+
+with tab4:
+    st.warning("Page still under development")
     
+    st.write(" #### ")
+    st.write("---")
 
+    with tab2:
+        st.title(":violet[Data analysis App] :exploding_head:")
+        st.write("Upload a csv file and run analysis by clicking the button")
+        uploaded_file = st.file_uploader("Upload a csv file", type=['csv'])
 
+        if uploaded_file is not None:
+            df = pd.read_csv(uploaded_file)
+            st.dataframe(df)
 
+            choice = st.selectbox("Choose", ["DESCRIPTIVE ANALYSIS", "GRAPHICAL ANALYSIS"], help='DESCRIPTIVE ANALYSIS option will only display output from quantitative variables')
 
+            if st.button('Analyze'):
+                with st.spinner('Analysing.....'):
+                    time.sleep(3)
+                st.balloons()
+                if choice=="DESCRIPTIVE ANALYSIS":
+                    st.write(df.fillna(df.mode()).describe())
+                else:
+                    st.info("Function still in development")
 
+st.write("####")
 
 
  #-------------FOOTER-----------
@@ -147,8 +196,16 @@ cols3, cols4, cols5 = st.columns(3, gap='large')
 cols3.page_link("https://tome.app/fx-3c4/johns-portfolio-cllaidgc700wkoe5qqmitxx1q", label='Portfolio')    
 cols3.image("profile-pic.png", width=150)
 cols4.page_link("https://williamjohnie61@gmail.com", label="Email")
-cols4.write("Ndelembi, John")
-cols4.write("Junior Data analyst / Developer")
+cols5.page_link("https://twitter.com/Johnwills171", label='Twitter')
+cols4.write("Prepared by: Ndelembi, John")
+cols4.write("Data analyst / Web Developer")
 cols4.write("For Calls | +255 625 232 734")
 
-             
+
+    
+
+
+
+
+
+
