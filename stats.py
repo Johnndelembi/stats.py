@@ -1,9 +1,6 @@
 import numpy as np
 import pandas as pd
-import os
-import matplotlib.pyplot as plt
 import streamlit as st
-from streamlit_lottie import st_lottie
 import time
 
 #-----PAGE CONFIGURATION-------
