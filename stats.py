@@ -33,19 +33,12 @@ with st.sidebar.expander("DASHBOARD"):
 st.sidebar.write("Copyright 2024")
 st.sidebar.write("[![Follow](https://img.shields.io/twitter/follow/Johnwills171?style=social)](https://www.twitter.com/Johnwills171)")
         
-
-      
-      
-cols1, cols2 = st.columns(2, gap="small")
-with cols1:
-      st.image("stats.png", width=200)
-
    
-with cols2:
-     st.subheader(":green[DATA SCIENCE PROJECT]")
-     st.write(" ***Dataset timeline 2021/2022***")
-     st.write("***Date | 08/Feb/2024***")
-     st.write("[![Follow](https://img.shields.io/twitter/follow/Johnwills171?style=social)](https://www.twitter.com/Johnwills171)")
+
+st.title(":green[DATA SCIENCE PROJECT]")
+st.write(" ***Dataset timeline 2021/2022***")
+st.write("***Date | 08/Feb/2024***")
+st.write("[![Follow](https://img.shields.io/twitter/follow/Johnwills171?style=social)](https://www.twitter.com/Johnwills171)")
 
 
 tab1, tab2 = st.tabs(["DATASET ANALYSIS", "RUN YOUR OWN ANALYSIS"]) 
@@ -54,7 +47,7 @@ tab1, tab2 = st.tabs(["DATASET ANALYSIS", "RUN YOUR OWN ANALYSIS"])
 
 
 with tab1:
-     st.title(":green[Overview] :sunglasses:")
+     st.header(":green[Overview] :sunglasses:")
      st.caption(" (EDA: Exploratory Data Analysis & IDA: Initial Data Analysis)")     
      st.markdown("The data shows scores of 21 students (5 females, 16 males) in 5 subjects (Mathematics, Statistical Theory And Methods, Applied Statistics, Economics, Statistical Computing). Females scored higher on average (70.8 vs. 62.7 for males), with scores ranging from 37 (male, Mathematics) to 96 (female, Economics). Positive correlations between subjects suggest students performing well in one tended to do well in others."
     )
